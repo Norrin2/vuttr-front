@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {ToolsService} from '../../services/tools.service';
 import {Tool} from '../../models/tool';
 import {HttpParams} from '@angular/common/http';
+import {MatDialog} from '@angular/material';
+import {DialogConfirmDeleteComponent} from '../dialog-confirm-delete/dialog-confirm-delete.component';
 
 @Component({
   selector: 'app-tools-list',
@@ -13,7 +15,8 @@ export class ToolsListComponent implements OnInit {
   tagsOnly = false;
   tools: Array<Tool> = [];
 
-  constructor(private toolsService: ToolsService) { }
+  constructor(private toolsService: ToolsService,
+              private dialog: MatDialog) { }
 
   ngOnInit() {
     this.findAll();
@@ -48,12 +51,18 @@ export class ToolsListComponent implements OnInit {
  }
 
  delete(element: Tool) {
-   this.toolsService.delete(element.id).subscribe(() => {
-       this.tools.splice(this.tools.findIndex( (tool => tool.id === element.id)), 1);
-     }, (error => {
-       alert(error);
-     })
-   );
+   this.dialog.open(DialogConfirmDeleteComponent, {data: {tool: element}, minWidth: '300px'})
+     .afterClosed().subscribe( (returnValue) => {
+       if (returnValue) {
+         this.toolsService.delete(element.id).subscribe(() => {
+             this.tools.splice(this.tools.findIndex( (tool => tool.id === element.id)), 1);
+           }, (error => {
+             alert(error);
+           })
+         );
+       }
+   });
+
  }
 
 }

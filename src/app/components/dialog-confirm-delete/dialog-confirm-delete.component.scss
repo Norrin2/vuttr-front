@@ -1,0 +1,21 @@
+footer {
+  display: flex;
+  flex-flow: row-reverse;
+}
+
+button {
+  margin-left: 2%;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+}
+
+.icon-close {
+  width: 20px;
+  height: 20px;
+  background-size: 15px;
+  margin-top: 4px;
+  display: block;
+}
