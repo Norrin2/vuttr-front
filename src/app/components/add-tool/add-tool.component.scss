@@ -1,10 +1,22 @@
-.ng-invalid {
+form {
+  padding: 2%;
+}
+
+input.ng-invalid, textarea.ng-invalid {
   background: #FEEFEE 0 0 no-repeat padding-box ;
   border: 1px solid #F95E5A ;
   border-radius: 5px ;
   opacity: 1 ;
 }
 
-input {
+input, textarea {
   width: 100%;
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+
+.buttonPrimaryNeutral {
+  margin-left: auto;
+  display: block;
+  margin-top: 1%;
 }

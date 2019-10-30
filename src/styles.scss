@@ -59,7 +59,7 @@ input[type="search"]::placeholder {
   background-repeat: no-repeat;
 }
 
-input[type="text"] {
+input[type="text"], textarea {
   background: #F5F4F6 0 0 no-repeat padding-box;
   border: 1px solid #EBEAED;
   border-radius: 5px;
@@ -67,6 +67,10 @@ input[type="text"] {
   height: 20px;
   letter-spacing: 0.4px;
   color: #B1ADB9;
+}
+
+textarea {
+  height: auto;
 }
 
 input[type="checkbox"] {
@@ -96,6 +100,10 @@ input[type="checkbox"] + label {
 }
 .buttonPrimaryNeutral:focus {
   background-color: #244AA8;
+}
+
+.buttonPrimaryNeutral:disabled {
+  background-color: #B9C6FA;
 }
 
 .buttonQuartiaryNeutral {

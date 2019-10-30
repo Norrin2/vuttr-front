@@ -1,4 +1,19 @@
-<label for="title">Tool Name *</label><br/>
-<input [(ngModel)]="tool.title" type="text" name="title" id="title" required>
+<header>
+  <h4>+ Add New Tool</h4>
+</header>
+<form (ngSubmit)="save()" #form="ngForm">
+  <label for="title">Tool Name *</label><br/>
+  <input [(ngModel)]="tool.title" type="text" name="title" id="title" required>
 
-<input [(ngModel)]="tool.description" type="text" name="description" id="description" required>
+  <label for="link">Tool Link *</label><br/>
+  <input [(ngModel)]="tool.link" type="text" name="link" id="link" required>
+
+  <label for="description">Tool Description *</label><br/>
+  <textarea [(ngModel)]="tool.description" type="text" name="description" id="description" required></textarea>
+
+  <label for="tags">Tags *</label><br/>
+  <input [(ngModel)]="tags" type="text" name="tags" id="tags" required>
+
+  <button type="submit" class="buttonPrimaryNeutral" [disabled]="!form.valid">+ Add Tool</button>
+</form>
+

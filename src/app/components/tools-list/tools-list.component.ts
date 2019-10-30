@@ -66,7 +66,10 @@ export class ToolsListComponent implements OnInit {
  }
 
  add() {
-   this.dialog.open(AddToolComponent, {minWidth: '50%'});
+   this.dialog.open(AddToolComponent, {minWidth: '50%'}).afterClosed().subscribe( () => {
+     this.findAll();
+     }
+   );
  }
 
 }

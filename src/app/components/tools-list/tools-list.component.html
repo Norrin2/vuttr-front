@@ -14,7 +14,7 @@
 
 <section class="cardMainFlat" *ngFor ="let tool of tools">
   <div>
-    <a [href]="tool?.link">{{tool?.title}}</a>
+    <a [href]="tool?.link" target="_blank">{{tool?.title}}</a>
     <div>
       <span class="icon-close"></span>
       <button class="buttonQuartiaryNeutral" (click)="delete(tool)">Remove</button>
