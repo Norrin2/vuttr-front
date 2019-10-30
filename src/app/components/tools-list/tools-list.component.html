@@ -11,6 +11,14 @@
 </header>
 
 
-<div *ngFor ="let tool of tools">
-  <p>{{tool?.title}}</p>
-</div>
+<section class="cardMainFlat" *ngFor ="let tool of tools">
+  <div>
+    <a [href]="tool?.link">{{tool?.title}}</a>
+    <div>
+      <span class="icon-close"></span>
+      <button class="buttonQuartiaryNeutral">Remove</button>
+    </div>
+  </div>
+  <p>{{tool?.description}}</p>
+  <span *ngFor="let tag of tool.tags">{{'#' + tag + ' ' }}</span>
+</section>

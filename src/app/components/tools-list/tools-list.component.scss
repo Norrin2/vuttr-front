@@ -14,4 +14,23 @@ input[type="checkbox"] {
   margin-top: 15px;
 }
 
+.cardMainFlat {
+  margin-top: 2%;
+  padding-left: 1%;
+  padding-right: 1%;
+}
 
+.cardMainFlat div {
+  display: flex;
+  flex-direction: row;
+}
+
+.cardMainFlat div div{
+  margin-left: auto;
+}
+
+.icon-close {
+  width: 20px;
+  background-size: 15px;
+  margin-top: 4px;
+}
