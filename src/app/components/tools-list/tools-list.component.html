@@ -1,7 +1,15 @@
 <header>
   <h1>VUTTR</h1>
   <h3>Very Useful Tools to Remember</h3>
+  <div class="search_header">
+    <input type="search" class="search" placeholder="Digite o que está procurando...">
+    <div>
+      <input type="checkbox" name="checkbox" id="checkbox"><label for="checkbox">search in tags only</label>
+    </div>
+    <button type="button" class="buttonPrimaryNeutral">+ Add</button>
+  </div>
 </header>
+
 
 <div *ngFor ="let tool of tools">
   <p>{{tool?.title}}</p>
