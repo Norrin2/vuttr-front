@@ -2,9 +2,10 @@
   <h1>VUTTR</h1>
   <h3>Very Useful Tools to Remember</h3>
   <div class="search_header">
-    <input type="search" class="search" placeholder="Digite o que está procurando...">
+    <input type="search" class="search" placeholder="Digite o que está procurando..." (keyup)="search($event)">
     <div>
-      <input type="checkbox" name="checkbox" id="checkbox"><label for="checkbox">search in tags only</label>
+      <input type="checkbox" name="checkbox" id="checkbox" [checked]="tagsOnly" (change)="tagsOnly = !tagsOnly">
+      <label for="checkbox">search in tags only</label>
     </div>
     <button type="button" class="buttonPrimaryNeutral">+ Add</button>
   </div>
@@ -16,7 +17,7 @@
     <a [href]="tool?.link">{{tool?.title}}</a>
     <div>
       <span class="icon-close"></span>
-      <button class="buttonQuartiaryNeutral">Remove</button>
+      <button class="buttonQuartiaryNeutral" (click)="delete(tool)">Remove</button>
     </div>
   </div>
   <p>{{tool?.description}}</p>
