@@ -59,6 +59,16 @@ input[type="search"]::placeholder {
   background-repeat: no-repeat;
 }
 
+input[type="text"] {
+  background: #F5F4F6 0 0 no-repeat padding-box;
+  border: 1px solid #EBEAED;
+  border-radius: 5px;
+  opacity: 1;
+  height: 20px;
+  letter-spacing: 0.4px;
+  color: #B1ADB9;
+}
+
 input[type="checkbox"] {
   border: 2px solid #FFFFFF;
   opacity: 1;

@@ -8,22 +8,27 @@ import {HttpClientModule} from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatDialogModule} from '@angular/material';
 import { DialogConfirmDeleteComponent } from './components/dialog-confirm-delete/dialog-confirm-delete.component';
+import { AddToolComponent } from './components/add-tool/add-tool.component';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     ToolsListComponent,
     DialogConfirmDeleteComponent,
+    AddToolComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
     MatDialogModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FormsModule
   ],
   entryComponents: [
-    DialogConfirmDeleteComponent
+    DialogConfirmDeleteComponent,
+    AddToolComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

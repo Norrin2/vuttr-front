@@ -4,6 +4,7 @@ import {Tool} from '../../models/tool';
 import {HttpParams} from '@angular/common/http';
 import {MatDialog} from '@angular/material';
 import {DialogConfirmDeleteComponent} from '../dialog-confirm-delete/dialog-confirm-delete.component';
+import {AddToolComponent} from '../add-tool/add-tool.component';
 
 @Component({
   selector: 'app-tools-list',
@@ -51,7 +52,7 @@ export class ToolsListComponent implements OnInit {
  }
 
  delete(element: Tool) {
-   this.dialog.open(DialogConfirmDeleteComponent, {data: {tool: element}, minWidth: '300px'})
+   this.dialog.open(DialogConfirmDeleteComponent, {data: {tool: element}, minWidth: '30%'})
      .afterClosed().subscribe( (returnValue) => {
        if (returnValue) {
          this.toolsService.delete(element.id).subscribe(() => {
@@ -62,7 +63,10 @@ export class ToolsListComponent implements OnInit {
          );
        }
    });
+ }
 
+ add() {
+   this.dialog.open(AddToolComponent, {minWidth: '50%'});
  }
 
 }
